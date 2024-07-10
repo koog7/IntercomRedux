@@ -24,7 +24,7 @@ const Home = () => {
                         </button>
                     ))}
                     <button className="button" onClick={clear}>{'<'}</button>
-                    <button className="button">0</button>
+                    <button className="button" onClick={() => addNumber('0')}>0</button>
                     <button className="button">E</button>
                 </div>
             </div>
