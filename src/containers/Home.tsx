@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../app/store.ts";
-import {addNum} from "./Counter/CounterSlice.tsx";
+import {addNum, clearArea} from "./Counter/CounterSlice.tsx";
 
 const Home = () => {
 
@@ -10,7 +10,9 @@ const Home = () => {
     const addNumber = (value: string) => {
         dispatch(addNum(value));
     };
-
+    const clear = () => {
+        dispatch(clearArea())
+    }
     return (
         <div>
             <div className="container">
@@ -21,7 +23,7 @@ const Home = () => {
                             {num}
                         </button>
                     ))}
-                    <button className="button">{'<'}</button>
+                    <button className="button" onClick={clear}>{'<'}</button>
                     <button className="button">0</button>
                     <button className="button">E</button>
                 </div>

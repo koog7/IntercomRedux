@@ -17,8 +17,11 @@ export const counterSlice = createSlice({
                 state.value += action.payload;
             }
         },
+        clearArea: (state) => {
+            state.value = state.value.slice(0, -1);
+        },
     },
 });
 
 export const counterReducer = counterSlice.reducer;
-export const  {addNum}  = counterSlice.actions;
+export const  {addNum, clearArea}  = counterSlice.actions;
