@@ -1,19 +1,26 @@
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "../app/store.ts";
+import {addNum} from "./Counter/CounterSlice.tsx";
+
 const Home = () => {
+
+    const value = useSelector((state: RootState) => state.counter.value);
+    const dispatch = useDispatch<AppDispatch>();
+
+    const addNumber = (value: string) => {
+        dispatch(addNum(value));
+    };
 
     return (
         <div>
             <div className="container">
-                <div className="display">{1337}</div>
+                <div className="display">{value}</div>
                 <div className="button-grid">
-                    <button className="button">7</button>
-                    <button className="button">8</button>
-                    <button className="button">9</button>
-                    <button className="button">4</button>
-                    <button className="button">5</button>
-                    <button className="button">6</button>
-                    <button className="button">1</button>
-                    <button className="button">2</button>
-                    <button className="button">3</button>
+                    {['7', '8', '9', '4', '5', '6', '1', '2', '3'].map((num) => (
+                        <button key={num} className="button" onClick={() => addNumber(num)}>
+                            {num}
+                        </button>
+                    ))}
                     <button className="button">{'<'}</button>
                     <button className="button">0</button>
                     <button className="button">E</button>
