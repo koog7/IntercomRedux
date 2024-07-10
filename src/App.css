@@ -2,3 +2,32 @@
   max-width: 1280px;
   margin: 0 auto;
 }
+.container {
+  width: 200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.display {
+  height: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  font-size: 24px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.button {
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  cursor: pointer;
+}
