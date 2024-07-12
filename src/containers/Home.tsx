@@ -8,6 +8,7 @@ const Home = () => {
     const value = useSelector((state: RootState) => state.counter.value);
     const message = useSelector((state: RootState) => state.counter.message);
     const color = useSelector((state: RootState) => state.counter.color);
+    const pincode = useSelector((state: RootState) => state.counter.pincode);
     const numlock = '1337';
     const addNumber = (value: string) => {
         dispatch(addNum(value));
@@ -17,7 +18,7 @@ const Home = () => {
     }
 
     const enterNum = () => {
-        if (value === numlock) {
+        if (pincode === numlock) {
             dispatch(enter({ message: 'Granted', color: 'green' }));
         } else {
             dispatch(enter({ message: 'Denied', color: 'red' }));
